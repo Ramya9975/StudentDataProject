@@ -50,7 +50,7 @@ namespace StudentDataProject
                     {
                         //File.Move(sourceFolderPath, destinationFolderPath);
 
-                        // SqlCommand Arrange = new SqlCommand("SELECT subjectid, studentid, subjectmarks FROM studentMarks GROUP BY studentid",con1);
+                        //SqlCommand Arrange = new SqlCommand("SELECT subjectid, studentid, subjectmarks FROM studentMarks GROUP BY studentid",con1);
                         //Arrange.ExecuteNonQuery();
                         MessageBox.Show("File processed successfully. Rows: " + rowCount.ToString(), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         con1.Close();
@@ -73,7 +73,7 @@ namespace StudentDataProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Data data = new Data();
+            searchScreen data = new searchScreen();
             data.Show();
 
         }

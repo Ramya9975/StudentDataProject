@@ -1,6 +1,6 @@
 ﻿namespace StudentDataProject
 {
-    partial class Data
+    partial class searchScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,7 +37,13 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.projectDataSet = new StudentDataProject.projectDataSet();
+            this.studentMarksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentMarksTableAdapter = new StudentDataProject.projectDataSetTableAdapters.StudentMarksTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMarksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +82,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(267, 197);
+            this.textBox2.Location = new System.Drawing.Point(267, 191);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 26);
             this.textBox2.TabIndex = 4;
@@ -89,13 +96,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(117, 381);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 354);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(769, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(957, 236);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -107,11 +116,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Data
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(606, 65);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 57);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // projectDataSet
+            // 
+            this.projectDataSet.DataSetName = "projectDataSet";
+            this.projectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentMarksBindingSource
+            // 
+            this.studentMarksBindingSource.DataMember = "StudentMarks";
+            this.studentMarksBindingSource.DataSource = this.projectDataSet;
+            // 
+            // studentMarksTableAdapter
+            // 
+            this.studentMarksTableAdapter.ClearBeforeFill = true;
+            // 
+            // searchScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1015, 641);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox3);
@@ -120,9 +155,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Data";
+            this.Name = "searchScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Data";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Data_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentMarksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +178,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private projectDataSet projectDataSet;
+        private System.Windows.Forms.BindingSource studentMarksBindingSource;
+        private projectDataSetTableAdapters.StudentMarksTableAdapter studentMarksTableAdapter;
     }
 }

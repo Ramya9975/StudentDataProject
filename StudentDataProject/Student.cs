@@ -37,6 +37,7 @@ namespace StudentDataProject
                     string studentRollNo = values[1];
                     string studentMark = values[2];
                     string subjectName = values[3];
+
                     if (studentName != "StudentName")
                     {
 
@@ -62,9 +63,10 @@ namespace StudentDataProject
                     }
                 }
             }
+            
+            SqlCommand groupbycmd = new SqlCommand("select StudentId,SubjectId,SubjectMarks From StudentMarks group By StudentId,SubjectId,SubjectMarks",con);
+            groupbycmd.ExecuteNonQuery();
             con.Close();
-            SqlCommand groupbycmd = new SqlCommand("select StudentId,SubjectId,SubjectMarks From StudentMarks group By StudentId,SubjectId,SubjectMarks \r\n");
-
             return true;
         }
     }
